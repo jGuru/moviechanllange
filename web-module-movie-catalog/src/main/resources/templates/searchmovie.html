@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie Database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}"/>
+</head>
+<body>
+
+<p align="center">Welcome</p>
+<p align="center" th:text="${message}"></p>
+<table align="center">
+    <form action="#" th:action="@{/moviesearch/}" th:object="${movieDetail}" method="post">
+        <tr>
+            <td><b>Movie Name</b></td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td><b>API Key</b></td>
+            <td><input type="text" name="apiKey"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Search Movie"></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" data-th-href="@{/css/gtvg.css}"/>
+</head>
+<body>
+
+<p align="center">Welcome</p>
+<p align="center"> Select below options to continue</p>
+<div align="center">
+    <form action="#" th:action="@{/TBD/}" th:object="${movieDetail}" method="post" modelAttribute="movieDetail">
+        <table align="center" border="3">
+            <thead>
+            <th>Title</th>
+            <th>Released Year</th>
+            <th>Poster</th>
+            <th>Box Office</th>
+            <th>Won Best Picture Award?</th>
+            </thead>
+            <tr>
+                <td><span th:text="${movieDetail.title}"></span></td>
+                <td><span th:text="${movieDetail.year}"></span></td>
+                <td><img th:src="${movieDetail.poster}"></td>
+                <td><span th:text="${movieDetail.boxOffice}"></span></td>
+                <td><span th:text="${movieDetail.isWonBestPicture}"></span></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" data-th-href="@{/css/gtvg.css}"/>
+</head>
+<body>
+
+<p align="center">Welcome</p>
+<p align="center"> List of top rated movies ordered by box office value</p>
+<div align="center">
+        <table align="center" border="3">
+            <thead>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Box Office</th>
+            </thead>
+
+            <tr th:each="movie: ${list}">
+                <td><span th:text="${movie.movieName}"></span></td>
+                <td><span th:text="${movie.rating}"></span></td>
+                <td>$<span th:text="${movie.boxoffice}"></span></td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>

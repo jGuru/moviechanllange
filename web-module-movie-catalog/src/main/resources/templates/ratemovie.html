@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" data-th-href="@{/css/gtvg.css}"/>
+</head>
+<body>
+<p align="center">Welcome</p>
+
+<p align="center" th:text="${message}"></p>
+<form action="#" th:action="@{/ratemovie/}" th:object="${movieDetail}" method="post">
+    <table>
+    <tr>
+        <td><b>Movie Name</b></td>
+        <td><input type="text" name="title"></td>
+    </tr>
+    <tr>
+        <td><b>Rating</b></td>
+        <td><select name="rating">
+            <option th:each="i : ${#numbers.sequence(1, 10)}" th:value="${i}" th:text="${i}"
+                    th:selected="${i==1}"></option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><b>API Key</b></td>
+        <td><input type="text" name="apiKey"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><input type="submit" value="Rate Movie"></td>
+    </tr>
+    </table>
+</form>
+
+</body>
+</html>
